@@ -1,0 +1,217 @@
+{
+  "baseline_tag": "teacher",
+  "baseline": {
+    "n_records": 50,
+    "axes": {
+      "groundedness": {
+        "n": 50,
+        "mean": 8.58,
+        "ci95_low": 8.44,
+        "ci95_high": 8.72
+      },
+      "personalization": {
+        "n": 50,
+        "mean": 9.28,
+        "ci95_low": 9.16,
+        "ci95_high": 9.4
+      },
+      "ranking_coherence": {
+        "n": 50,
+        "mean": 9.98,
+        "ci95_low": 9.94,
+        "ci95_high": 10.0
+      }
+    }
+  },
+  "probes": {
+    "teacher-p1-ranking-shuffled": {
+      "n_paired": 50,
+      "axes": {
+        "groundedness": {
+          "n_paired": 50,
+          "mean_delta": -0.04,
+          "delta_ci95_low": -0.16,
+          "delta_ci95_high": 0.08,
+          "perturbed_mean": 8.54,
+          "baseline_mean_in_pair": 8.58,
+          "discrimination_rate": 0.12,
+          "wilcoxon": {
+            "n_total": 50,
+            "n_effective": 10,
+            "method": "wilcoxon-signed-rank",
+            "error": null,
+            "statistic": 22.0,
+            "p_value": 0.376953125
+          },
+          "expected_drop_threshold": 0.0,
+          "verdict": "consistent"
+        },
+        "personalization": {
+          "n_paired": 50,
+          "mean_delta": -0.2,
+          "delta_ci95_low": -0.32,
+          "delta_ci95_high": -0.08,
+          "perturbed_mean": 9.08,
+          "baseline_mean_in_pair": 9.28,
+          "discrimination_rate": 0.22,
+          "wilcoxon": {
+            "n_total": 50,
+            "n_effective": 12,
+            "method": "wilcoxon-signed-rank",
+            "error": null,
+            "statistic": 6.5,
+            "p_value": 0.003173828125
+          },
+          "expected_drop_threshold": 0.0,
+          "verdict": "unexpected-drop"
+        },
+        "ranking_coherence": {
+          "n_paired": 50,
+          "mean_delta": -7.24,
+          "delta_ci95_low": -7.82,
+          "delta_ci95_high": -6.62,
+          "perturbed_mean": 2.74,
+          "baseline_mean_in_pair": 9.98,
+          "discrimination_rate": 0.98,
+          "wilcoxon": {
+            "n_total": 50,
+            "n_effective": 49,
+            "method": "wilcoxon-signed-rank",
+            "error": null,
+            "statistic": 0.0,
+            "p_value": 2.831557273697763e-10
+          },
+          "expected_drop_threshold": -1.5,
+          "verdict": "pass"
+        }
+      },
+      "missing": false
+    },
+    "teacher-p2-rationale-swapped": {
+      "n_paired": 50,
+      "axes": {
+        "groundedness": {
+          "n_paired": 50,
+          "mean_delta": 0.44,
+          "delta_ci95_low": 0.14,
+          "delta_ci95_high": 0.72,
+          "perturbed_mean": 9.02,
+          "baseline_mean_in_pair": 8.58,
+          "discrimination_rate": 0.14,
+          "wilcoxon": {
+            "n_total": 50,
+            "n_effective": 34,
+            "method": "wilcoxon-signed-rank",
+            "error": null,
+            "statistic": 474.0,
+            "p_value": 0.9994086900644231
+          },
+          "expected_drop_threshold": -2.0,
+          "verdict": "inverted"
+        },
+        "personalization": {
+          "n_paired": 50,
+          "mean_delta": -0.12,
+          "delta_ci95_low": -0.26,
+          "delta_ci95_high": 0.0,
+          "perturbed_mean": 9.16,
+          "baseline_mean_in_pair": 9.28,
+          "discrimination_rate": 0.18,
+          "wilcoxon": {
+            "n_total": 50,
+            "n_effective": 12,
+            "method": "wilcoxon-signed-rank",
+            "error": null,
+            "statistic": 19.5,
+            "p_value": 0.072998046875
+          },
+          "expected_drop_threshold": -2.0,
+          "verdict": "null"
+        },
+        "ranking_coherence": {
+          "n_paired": 50,
+          "mean_delta": -1.4,
+          "delta_ci95_low": -2.16,
+          "delta_ci95_high": -0.7,
+          "perturbed_mean": 8.58,
+          "baseline_mean_in_pair": 9.98,
+          "discrimination_rate": 0.24,
+          "wilcoxon": {
+            "n_total": 50,
+            "n_effective": 13,
+            "method": "wilcoxon-signed-rank",
+            "error": null,
+            "statistic": 1.0,
+            "p_value": 0.000244140625
+          },
+          "expected_drop_threshold": -1.0,
+          "verdict": "pass"
+        }
+      },
+      "missing": false
+    },
+    "teacher-p3-persona-replaced": {
+      "n_paired": 50,
+      "axes": {
+        "groundedness": {
+          "n_paired": 50,
+          "mean_delta": -0.04,
+          "delta_ci95_low": -0.14,
+          "delta_ci95_high": 0.06,
+          "perturbed_mean": 8.54,
+          "baseline_mean_in_pair": 8.58,
+          "discrimination_rate": 0.08,
+          "wilcoxon": {
+            "n_total": 50,
+            "n_effective": 6,
+            "method": "wilcoxon-signed-rank",
+            "error": null,
+            "statistic": 7.0,
+            "p_value": 0.34375
+          },
+          "expected_drop_threshold": 0.0,
+          "verdict": "consistent"
+        },
+        "personalization": {
+          "n_paired": 50,
+          "mean_delta": -2.08,
+          "delta_ci95_low": -2.54,
+          "delta_ci95_high": -1.66,
+          "perturbed_mean": 7.2,
+          "baseline_mean_in_pair": 9.28,
+          "discrimination_rate": 0.9,
+          "wilcoxon": {
+            "n_total": 50,
+            "n_effective": 45,
+            "method": "wilcoxon-signed-rank",
+            "error": null,
+            "statistic": 0.0,
+            "p_value": 1.7136103222759484e-09
+          },
+          "expected_drop_threshold": -1.0,
+          "verdict": "pass"
+        },
+        "ranking_coherence": {
+          "n_paired": 50,
+          "mean_delta": -0.02,
+          "delta_ci95_low": -0.06,
+          "delta_ci95_high": 0.0,
+          "perturbed_mean": 9.96,
+          "baseline_mean_in_pair": 9.98,
+          "discrimination_rate": 0.02,
+          "wilcoxon": {
+            "n_total": 50,
+            "n_effective": 1,
+            "method": "wilcoxon-signed-rank",
+            "error": "fewer than 2 non-zero deltas",
+            "statistic": -1.0,
+            "p_value": null
+          },
+          "expected_drop_threshold": 0.0,
+          "verdict": "consistent"
+        }
+      },
+      "missing": false
+    }
+  }
+}

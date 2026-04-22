@@ -1,0 +1,32 @@
+{
+  "tag": "merged",
+  "split": "eval",
+  "n_samples": 37,
+  "model": "/workspace/projects/LLM_distillation/ckpt/student-merged",
+  "positive_metrics": {
+    "teacher": {
+      "recall@1": 0.2702702702702703,
+      "recall@5": 0.7027027027027027,
+      "recall@10": 1.0,
+      "mrr@10": 0.4777134277134277,
+      "n_evaluated": 37
+    },
+    "student": {
+      "recall@1": 0.2702702702702703,
+      "recall@5": 0.7837837837837838,
+      "recall@10": 1.0,
+      "mrr@10": 0.4888888888888889,
+      "n_evaluated": 37
+    }
+  },
+  "parsing": {
+    "total": 37,
+    "valid": 37,
+    "valid_rate": 1.0
+  },
+  "teacher_agreement": {
+    "top1_agreement": 0.4864864864864865,
+    "kendall_tau_mean": 0.6600600600600603,
+    "kendall_tau_valid_n": 37
+  }
+}

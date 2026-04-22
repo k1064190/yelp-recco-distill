@@ -1,0 +1,32 @@
+{
+  "tag": "v3-9b-sft",
+  "split": "eval",
+  "n_samples": 287,
+  "model": "ckpt/student-v3-9b-sft-merged",
+  "positive_metrics": {
+    "teacher": {
+      "recall@1": 0.27526132404181186,
+      "recall@5": 0.7665505226480837,
+      "recall@10": 1.0,
+      "mrr@10": 0.4808472982689012,
+      "n_evaluated": 287
+    },
+    "student": {
+      "recall@1": 0.289198606271777,
+      "recall@5": 0.7874564459930313,
+      "recall@10": 1.0,
+      "mrr@10": 0.4967756208174328,
+      "n_evaluated": 287
+    }
+  },
+  "parsing": {
+    "total": 287,
+    "valid": 287,
+    "valid_rate": 1.0
+  },
+  "teacher_agreement": {
+    "top1_agreement": 0.6167247386759582,
+    "kendall_tau_mean": 0.6890437475803318,
+    "kendall_tau_valid_n": 287
+  }
+}

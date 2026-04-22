@@ -1,0 +1,21 @@
+{
+  "_comment": "DeepSpeed ZeRO Stage 2 config for v2-gkd-warm full-FT on 4× RTX 3090. Shards optimizer states + gradients across ranks; weights stay replicated so on-policy student.generate() pays zero all-gather cost (critical for GKD throughput). HF Trainer fills 'auto' fields from TrainingArguments.",
+  "bf16": {
+    "enabled": true
+  },
+  "zero_optimization": {
+    "stage": 2,
+    "allgather_partitions": true,
+    "allgather_bucket_size": 2e8,
+    "overlap_comm": true,
+    "reduce_scatter": true,
+    "reduce_bucket_size": 2e8,
+    "contiguous_gradients": true
+  },
+  "gradient_accumulation_steps": "auto",
+  "gradient_clipping": "auto",
+  "train_micro_batch_size_per_gpu": "auto",
+  "train_batch_size": "auto",
+  "steps_per_print": 20,
+  "wall_clock_breakdown": false
+}

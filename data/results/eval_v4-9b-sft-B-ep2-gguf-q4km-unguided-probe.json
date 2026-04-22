@@ -1,0 +1,55 @@
+{
+  "tag": "v4-9b-sft-B-ep2-gguf-q4km-unguided-probe",
+  "model_name": "student-q4-k-m",
+  "gguf": "ckpt/student-v4-9b-sft-B-ep2-gguf-q4km/student-q4-k-m.gguf",
+  "n_samples": 20,
+  "split": "eval",
+  "guided_decoding": false,
+  "enable_thinking": false,
+  "ctx_size": 8192,
+  "n_gpu_layers": -1,
+  "parsing": {
+    "total": 20,
+    "valid": 0,
+    "valid_rate": 0
+  },
+  "positive_metrics": {
+    "teacher": {
+      "recall@1": 0.2,
+      "recall@5": 0.5,
+      "recall@10": 1,
+      "mrr@10": 0.3756746031746031,
+      "ndcg@5": 0.35616063116448504,
+      "ndcg@10": 0.5184295126575825,
+      "n_evaluated": 20
+    },
+    "student": {
+      "recall@1": 0,
+      "recall@5": 0,
+      "recall@10": 0,
+      "mrr@10": 0,
+      "ndcg@5": 0,
+      "ndcg@10": 0,
+      "n_evaluated": 20
+    }
+  },
+  "teacher_agreement": {
+    "top1_agreement": 0,
+    "kendall_tau_mean": 0,
+    "kendall_tau_valid_n": 0
+  },
+  "token_distribution": {
+    "n": 20,
+    "mean": 1024,
+    "stdev": 0,
+    "min": 1024,
+    "p50": 1024,
+    "p95": 1024,
+    "p99": 1024,
+    "max": 1024
+  },
+  "position_bias": {
+    "n_valid": 0
+  },
+  "generation_time_s": 147.7
+}

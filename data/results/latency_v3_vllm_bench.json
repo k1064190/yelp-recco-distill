@@ -1,0 +1,29 @@
+[
+  {
+    "name": "v3-sft (0.8B) vLLM",
+    "ms_per_tok": 4.33,
+    "tok_per_s": 231.1,
+    "avg_time_s": 2.98,
+    "avg_tokens": 688,
+    "backend": "vllm",
+    "n": 20
+  },
+  {
+    "name": "v3-9b-sft (9B) vLLM",
+    "ms_per_tok": 12.18,
+    "tok_per_s": 82.1,
+    "avg_time_s": 12.47,
+    "avg_tokens": 1024,
+    "backend": "vllm",
+    "n": 20
+  },
+  {
+    "name": "Teacher (35B-A3B) vLLM",
+    "ms_per_tok": 6.66,
+    "tok_per_s": 150.2,
+    "avg_time_s": 6.82,
+    "avg_tokens": 1024,
+    "backend": "vllm",
+    "n": 20
+  }
+]

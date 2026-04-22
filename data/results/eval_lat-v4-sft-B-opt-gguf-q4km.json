@@ -1,0 +1,94 @@
+{
+  "tag": "lat-v4-sft-B-opt-gguf-q4km",
+  "model_name": "student-q4-k-m",
+  "gguf": "ckpt/student-v4-sft-B-opt-gguf-q4km/student-q4-k-m.gguf",
+  "n_samples": 50,
+  "split": "eval",
+  "guided_decoding": false,
+  "enable_thinking": false,
+  "ctx_size": 4096,
+  "n_gpu_layers": -1,
+  "parsing": {
+    "total": 50,
+    "valid": 50,
+    "valid_rate": 1.0
+  },
+  "positive_metrics": {
+    "teacher": {
+      "recall@1": 0.24,
+      "recall@5": 0.62,
+      "recall@10": 1.0,
+      "mrr@10": 0.41631746031746025,
+      "ndcg@5": 0.42798533076002543,
+      "ndcg@10": 0.5511548989861867,
+      "n_evaluated": 50
+    },
+    "student": {
+      "recall@1": 0.24,
+      "recall@5": 0.72,
+      "recall@10": 1.0,
+      "mrr@10": 0.4519444444444444,
+      "ndcg@5": 0.4923104323500682,
+      "ndcg@10": 0.5803957371871128,
+      "n_evaluated": 50
+    }
+  },
+  "teacher_agreement": {
+    "top1_agreement": 0.58,
+    "kendall_tau_mean": 0.6613333333333336,
+    "kendall_tau_valid_n": 50
+  },
+  "token_distribution": {
+    "n": 50,
+    "mean": 696.4,
+    "stdev": 36.8,
+    "min": 633,
+    "p50": 697,
+    "p95": 761,
+    "p99": 777,
+    "max": 777
+  },
+  "position_bias": {
+    "n_valid": 50,
+    "top1_slot_counts": [
+      5,
+      3,
+      5,
+      7,
+      8,
+      6,
+      10,
+      0,
+      4,
+      2
+    ],
+    "slot1_top1_rate": 0.1,
+    "chi2_uniform": 15.6,
+    "chi2_pvalue": 0.075719,
+    "recall_by_gt_position": [
+      0.4,
+      0.1429,
+      0.1429,
+      0.2857,
+      0.5,
+      0.5,
+      0.25,
+      0.0,
+      0.3333,
+      0.3333
+    ],
+    "recall_support": [
+      5,
+      7,
+      7,
+      7,
+      2,
+      4,
+      4,
+      8,
+      3,
+      3
+    ]
+  },
+  "generation_time_s": 115.0
+}

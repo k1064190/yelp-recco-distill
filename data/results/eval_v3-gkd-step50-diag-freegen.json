@@ -1,0 +1,32 @@
+{
+  "tag": "v3-gkd-step50-diag-freegen",
+  "split": "eval",
+  "n_samples": 287,
+  "model": "ckpt/student-v3-gkd-step50-diag-merged",
+  "positive_metrics": {
+    "teacher": {
+      "recall@1": 0.27526132404181186,
+      "recall@5": 0.7665505226480837,
+      "recall@10": 1.0,
+      "mrr@10": 0.4808472982689012,
+      "n_evaluated": 287
+    },
+    "student": {
+      "recall@1": 0.2508710801393728,
+      "recall@5": 0.7456445993031359,
+      "recall@10": 0.9895470383275261,
+      "mrr@10": 0.4664509706321553,
+      "n_evaluated": 287
+    }
+  },
+  "parsing": {
+    "total": 287,
+    "valid": 284,
+    "valid_rate": 0.9895470383275261
+  },
+  "teacher_agreement": {
+    "top1_agreement": 0.5017421602787456,
+    "kendall_tau_mean": 0.6528951486697956,
+    "kendall_tau_valid_n": 284
+  }
+}

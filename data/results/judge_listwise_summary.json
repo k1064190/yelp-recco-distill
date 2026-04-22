@@ -1,0 +1,86 @@
+{
+  "config": {
+    "n_eval_samples": 50,
+    "models": [
+      "teacher-p1-ranking-shuffled",
+      "teacher-p2-rationale-swapped",
+      "teacher-p3-persona-replaced"
+    ],
+    "judge_model": "gemini-3-flash-preview",
+    "inference_cache": [
+      "data/inference_samples/teacher-p1-ranking-shuffled.json",
+      "data/inference_samples/teacher-p2-rationale-swapped.json",
+      "data/inference_samples/teacher-p3-persona-replaced.json"
+    ]
+  },
+  "per_model": {
+    "teacher": {
+      "n_total": 50,
+      "n_scored": 48,
+      "n_errors": 2,
+      "groundedness": {
+        "mean": 4.958333333333333,
+        "ci95_low": 4.895833333333333,
+        "ci95_high": 5.0,
+        "n": 48
+      },
+      "personalization": {
+        "mean": 5.0,
+        "ci95_low": 5.0,
+        "ci95_high": 5.0,
+        "n": 48
+      }
+    },
+    "teacher-p1-ranking-shuffled": {
+      "n_total": 50,
+      "n_scored": 50,
+      "n_errors": 0,
+      "groundedness": {
+        "mean": 4.92,
+        "ci95_low": 4.84,
+        "ci95_high": 4.98,
+        "n": 50
+      },
+      "personalization": {
+        "mean": 1.4,
+        "ci95_low": 1.2,
+        "ci95_high": 1.64,
+        "n": 50
+      }
+    },
+    "teacher-p2-rationale-swapped": {
+      "n_total": 50,
+      "n_scored": 48,
+      "n_errors": 2,
+      "groundedness": {
+        "mean": 4.916666666666667,
+        "ci95_low": 4.770833333333333,
+        "ci95_high": 5.0,
+        "n": 48
+      },
+      "personalization": {
+        "mean": 3.5416666666666665,
+        "ci95_low": 3.0833333333333335,
+        "ci95_high": 3.9791666666666665,
+        "n": 48
+      }
+    },
+    "teacher-p3-persona-replaced": {
+      "n_total": 50,
+      "n_scored": 49,
+      "n_errors": 1,
+      "groundedness": {
+        "mean": 4.918367346938775,
+        "ci95_low": 4.836734693877551,
+        "ci95_high": 4.979591836734694,
+        "n": 49
+      },
+      "personalization": {
+        "mean": 5.0,
+        "ci95_low": 5.0,
+        "ci95_high": 5.0,
+        "n": 49
+      }
+    }
+  }
+}

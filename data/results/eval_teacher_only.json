@@ -1,0 +1,15 @@
+{
+  "tag": "teacher-only-smoke",
+  "split": "eval",
+  "n_samples": 37,
+  "model": "/workspace/projects/LLM_distillation/ckpt/student-merged",
+  "positive_metrics": {
+    "teacher": {
+      "recall@1": 0.2702702702702703,
+      "recall@5": 0.7027027027027027,
+      "recall@10": 1.0,
+      "mrr@10": 0.4777134277134277,
+      "n_evaluated": 37
+    }
+  }
+}

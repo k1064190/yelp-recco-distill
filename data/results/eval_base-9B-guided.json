@@ -1,0 +1,35 @@
+{
+  "tag": "base-9B-guided",
+  "model_name": "base-9B",
+  "url": "http://localhost:8200/v1",
+  "n_samples": 287,
+  "split": "eval",
+  "guided_decoding": true,
+  "parsing": {
+    "total": 287,
+    "valid": 286,
+    "valid_rate": 0.9965156794425087
+  },
+  "positive_metrics": {
+    "teacher": {
+      "recall@1": 0.27526132404181186,
+      "recall@5": 0.7665505226480837,
+      "recall@10": 1,
+      "mrr@10": 0.4808472982689012,
+      "n_evaluated": 287
+    },
+    "student": {
+      "recall@1": 0.23693379790940766,
+      "recall@5": 0.7317073170731707,
+      "recall@10": 0.9965156794425087,
+      "mrr@10": 0.44913583319506667,
+      "n_evaluated": 287
+    }
+  },
+  "teacher_agreement": {
+    "top1_agreement": 0.5435540069686411,
+    "kendall_tau_mean": 0.6243978243978234,
+    "kendall_tau_valid_n": 286
+  },
+  "generation_time_s": 2545.5
+}

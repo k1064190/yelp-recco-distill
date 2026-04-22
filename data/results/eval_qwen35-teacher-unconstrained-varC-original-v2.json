@@ -1,0 +1,51 @@
+{
+  "tag": "qwen35-teacher-unconstrained-varC-original-v2",
+  "model_name": "qwen35-teacher-bench",
+  "url": "http://localhost:8500/v1",
+  "n_samples": 287,
+  "split": "eval",
+  "guided_decoding": false,
+  "concurrency": 8,
+  "parsing": {
+    "total": 287,
+    "valid": 0,
+    "valid_rate": 0
+  },
+  "positive_metrics": {
+    "teacher": {
+      "recall@1": 0.27526132404181186,
+      "recall@5": 0.7665505226480837,
+      "recall@10": 1,
+      "mrr@10": 0.4808472982689012,
+      "n_evaluated": 287
+    },
+    "student": {
+      "recall@1": 0,
+      "recall@5": 0,
+      "recall@10": 0,
+      "mrr@10": 0,
+      "n_evaluated": 287,
+      "ndcg@5": 0,
+      "ndcg@10": 0
+    }
+  },
+  "teacher_agreement": {
+    "top1_agreement": 0,
+    "kendall_tau_mean": 0,
+    "kendall_tau_valid_n": 0
+  },
+  "token_distribution": {
+    "n": 287,
+    "mean": 554.4,
+    "stdev": 45.8,
+    "min": 436,
+    "p50": 556,
+    "p95": 622,
+    "p99": 657,
+    "max": 745
+  },
+  "position_bias": {
+    "n_valid": 0
+  },
+  "generation_time_s": 1232.4
+}

@@ -1,0 +1,236 @@
+{
+  "dataset_gt_position": {
+    "name": "Dataset GT slot of positive_business_id",
+    "n": 3000,
+    "counts": [
+      305,
+      291,
+      300,
+      267,
+      316,
+      283,
+      319,
+      302,
+      323,
+      294
+    ],
+    "percent": [
+      10.167,
+      9.7,
+      10.0,
+      8.9,
+      10.533,
+      9.433,
+      10.633,
+      10.067,
+      10.767,
+      9.8
+    ],
+    "uniform_percent": 10.0,
+    "max_slot": 9,
+    "max_percent": 10.767,
+    "min_slot": 4,
+    "min_percent": 8.9,
+    "chi2": 8.9,
+    "p_value": 0.446556,
+    "df": 9
+  },
+  "teachers": [
+    {
+      "path": "data/teacher/philly_teacher_qwen35.jsonl",
+      "top1_distribution": {
+        "name": "Teacher top-1 slot @ philly_teacher_qwen35.jsonl",
+        "n": 2953,
+        "counts": [
+          598,
+          222,
+          274,
+          287,
+          266,
+          318,
+          257,
+          238,
+          267,
+          226
+        ],
+        "percent": [
+          20.251,
+          7.518,
+          9.279,
+          9.719,
+          9.008,
+          10.769,
+          8.703,
+          8.06,
+          9.042,
+          7.653
+        ],
+        "uniform_percent": 10.0,
+        "max_slot": 1,
+        "max_percent": 20.251,
+        "min_slot": 2,
+        "min_percent": 7.518,
+        "chi2": 369.9631,
+        "p_value": 3.47609e-74,
+        "df": 9
+      },
+      "recall_by_gt_position": [
+        0.4561,
+        0.1777,
+        0.2746,
+        0.2331,
+        0.2771,
+        0.296,
+        0.219,
+        0.2167,
+        0.2484,
+        0.2145
+      ],
+      "recall_support": [
+        296,
+        287,
+        295,
+        266,
+        314,
+        277,
+        315,
+        300,
+        314,
+        289
+      ],
+      "n_strict_valid": 2953,
+      "n_with_gt": 2953
+    },
+    {
+      "path": "data/teacher/philly_teacher_qwen35_http_identity.jsonl",
+      "top1_distribution": {
+        "name": "Teacher top-1 slot @ philly_teacher_qwen35_http_identity.jsonl",
+        "n": 2995,
+        "counts": [
+          403,
+          244,
+          288,
+          297,
+          330,
+          296,
+          302,
+          298,
+          283,
+          254
+        ],
+        "percent": [
+          13.456,
+          8.147,
+          9.616,
+          9.917,
+          11.018,
+          9.883,
+          10.083,
+          9.95,
+          9.449,
+          8.481
+        ],
+        "uniform_percent": 10.0,
+        "max_slot": 1,
+        "max_percent": 13.456,
+        "min_slot": 2,
+        "min_percent": 8.147,
+        "chi2": 57.5109,
+        "p_value": 4.03393e-09,
+        "df": 9
+      },
+      "recall_by_gt_position": [
+        0.3158,
+        0.2027,
+        0.2709,
+        0.2744,
+        0.3101,
+        0.2756,
+        0.2508,
+        0.2947,
+        0.2167,
+        0.2363
+      ],
+      "recall_support": [
+        304,
+        291,
+        299,
+        266,
+        316,
+        283,
+        319,
+        302,
+        323,
+        292
+      ],
+      "n_strict_valid": 2995,
+      "n_with_gt": 2995
+    },
+    {
+      "path": "data/teacher/philly_teacher_qwen35_perm_reverse.jsonl",
+      "top1_distribution": {
+        "name": "Teacher top-1 slot @ philly_teacher_qwen35_perm_reverse.jsonl",
+        "n": 2999,
+        "counts": [
+          446,
+          250,
+          273,
+          304,
+          313,
+          289,
+          285,
+          309,
+          286,
+          244
+        ],
+        "percent": [
+          14.872,
+          8.336,
+          9.103,
+          10.137,
+          10.437,
+          9.637,
+          9.503,
+          10.303,
+          9.537,
+          8.136
+        ],
+        "uniform_percent": 10.0,
+        "max_slot": 1,
+        "max_percent": 14.872,
+        "min_slot": 10,
+        "min_percent": 8.136,
+        "chi2": 94.9947,
+        "p_value": 1.61199e-16,
+        "df": 9
+      },
+      "recall_by_gt_position": [
+        0.1148,
+        0.0893,
+        0.0533,
+        0.0824,
+        0.0759,
+        0.0883,
+        0.0752,
+        0.0797,
+        0.0743,
+        0.0816
+      ],
+      "recall_support": [
+        305,
+        291,
+        300,
+        267,
+        316,
+        283,
+        319,
+        301,
+        323,
+        294
+      ],
+      "n_strict_valid": 2999,
+      "n_with_gt": 2999
+    }
+  ],
+  "samples_path": "/workspace/projects/LLM_distillation/data/processed/philly_samples.jsonl"
+}

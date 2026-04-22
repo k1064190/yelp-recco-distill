@@ -1,0 +1,106 @@
+{
+  "dataset_gt_position": {
+    "name": "Dataset GT slot of positive_business_id",
+    "n": 3000,
+    "counts": [
+      305,
+      291,
+      300,
+      267,
+      316,
+      283,
+      319,
+      302,
+      323,
+      294
+    ],
+    "percent": [
+      10.167,
+      9.7,
+      10.0,
+      8.9,
+      10.533,
+      9.433,
+      10.633,
+      10.067,
+      10.767,
+      9.8
+    ],
+    "uniform_percent": 10.0,
+    "max_slot": 9,
+    "max_percent": 10.767,
+    "min_slot": 4,
+    "min_percent": 8.9,
+    "chi2": 8.9,
+    "p_value": 0.446556,
+    "df": 9
+  },
+  "teachers": [
+    {
+      "path": "data/teacher/philly_teacher.jsonl",
+      "top1_distribution": {
+        "name": "Teacher top-1 slot @ philly_teacher.jsonl",
+        "n": 1786,
+        "counts": [
+          216,
+          153,
+          153,
+          162,
+          168,
+          197,
+          179,
+          169,
+          192,
+          197
+        ],
+        "percent": [
+          12.094,
+          8.567,
+          8.567,
+          9.071,
+          9.406,
+          11.03,
+          10.022,
+          9.462,
+          10.75,
+          11.03
+        ],
+        "uniform_percent": 10.0,
+        "max_slot": 1,
+        "max_percent": 12.094,
+        "min_slot": 2,
+        "min_percent": 8.567,
+        "chi2": 22.6562,
+        "p_value": 0.00701636,
+        "df": 9
+      },
+      "recall_by_gt_position": [
+        0.3976,
+        0.2857,
+        0.3006,
+        0.3588,
+        0.3333,
+        0.4044,
+        0.3526,
+        0.3316,
+        0.3438,
+        0.3293
+      ],
+      "recall_support": [
+        166,
+        175,
+        173,
+        170,
+        183,
+        183,
+        190,
+        190,
+        192,
+        164
+      ],
+      "n_strict_valid": 1786,
+      "n_with_gt": 1786
+    }
+  ],
+  "samples_path": "/workspace/projects/LLM_distillation/data/processed/philly_samples.jsonl"
+}

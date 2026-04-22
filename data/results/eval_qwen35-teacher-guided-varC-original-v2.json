@@ -1,0 +1,90 @@
+{
+  "tag": "qwen35-teacher-guided-varC-original-v2",
+  "model_name": "qwen35-teacher-bench-guided",
+  "url": "http://localhost:8501/v1",
+  "n_samples": 287,
+  "split": "eval",
+  "guided_decoding": true,
+  "concurrency": 8,
+  "parsing": {
+    "total": 287,
+    "valid": 287,
+    "valid_rate": 1.0
+  },
+  "positive_metrics": {
+    "teacher": {
+      "recall@1": 0.27526132404181186,
+      "recall@5": 0.7665505226480837,
+      "recall@10": 1.0,
+      "mrr@10": 0.4808472982689012,
+      "n_evaluated": 287
+    },
+    "student": {
+      "recall@1": 0.27526132404181186,
+      "recall@5": 0.759581881533101,
+      "recall@10": 1.0,
+      "mrr@10": 0.481470881035341,
+      "n_evaluated": 287,
+      "ndcg@5": 0.5266799760973321,
+      "ndcg@10": 0.6039398086473409
+    }
+  },
+  "teacher_agreement": {
+    "top1_agreement": 0.5505226480836237,
+    "kendall_tau_mean": 0.6964769647696458,
+    "kendall_tau_valid_n": 287
+  },
+  "token_distribution": {
+    "n": 287,
+    "mean": 709.5,
+    "stdev": 41.5,
+    "min": 589,
+    "p50": 705,
+    "p95": 781,
+    "p99": 813,
+    "max": 847
+  },
+  "position_bias": {
+    "n_valid": 287,
+    "top1_slot_counts": [
+      74,
+      21,
+      25,
+      19,
+      27,
+      18,
+      28,
+      21,
+      30,
+      24
+    ],
+    "slot1_top1_rate": 0.2578,
+    "chi2_uniform": 84.324,
+    "chi2_pvalue": null,
+    "recall_by_gt_position": [
+      0.52,
+      0.2414,
+      0.2759,
+      0.1765,
+      0.3333,
+      0.1724,
+      0.24,
+      0.1379,
+      0.4,
+      0.3143
+    ],
+    "recall_support": [
+      25,
+      29,
+      29,
+      34,
+      27,
+      29,
+      25,
+      29,
+      25,
+      35
+    ]
+  },
+  "generation_time_s": 1759.4
+}

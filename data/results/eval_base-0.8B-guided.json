@@ -1,0 +1,35 @@
+{
+  "tag": "base-0.8B-guided",
+  "model_name": "base-0.8B",
+  "url": "http://localhost:8200/v1",
+  "n_samples": 287,
+  "split": "eval",
+  "guided_decoding": true,
+  "parsing": {
+    "total": 287,
+    "valid": 169,
+    "valid_rate": 0.5888501742160279
+  },
+  "positive_metrics": {
+    "teacher": {
+      "recall@1": 0.27526132404181186,
+      "recall@5": 0.7665505226480837,
+      "recall@10": 1,
+      "mrr@10": 0.4808472982689012,
+      "n_evaluated": 287
+    },
+    "student": {
+      "recall@1": 0.07317073170731707,
+      "recall@5": 0.3205574912891986,
+      "recall@10": 0.5888501742160279,
+      "mrr@10": 0.18591200707925462,
+      "n_evaluated": 287
+    }
+  },
+  "teacher_agreement": {
+    "top1_agreement": 0.14285714285714285,
+    "kendall_tau_mean": 0.2302432610124918,
+    "kendall_tau_valid_n": 169
+  },
+  "generation_time_s": 881.3
+}

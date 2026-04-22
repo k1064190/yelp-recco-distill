@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+
+# Yelp dataset — users must obtain independently per Yelp Terms of Use
+data/raw/
+data/processed/
+data/teacher/
+data/inference_samples/
+
+# Per-sample raw outputs — would embed Yelp user content
+data/results/*_raw.jsonl
+data/results/*_raw.txt
+data/results/raw/
+data/results/judge_listwise_raw*.jsonl
+
+# Model artefacts — reproducible from code + data
+ckpt/
+ckpt-*/
+
+# Training / serving logs
+logs/
+*.log
+wandb/
+
+# Secrets
+.env
+.env.*
+*.key
+credentials.json
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store

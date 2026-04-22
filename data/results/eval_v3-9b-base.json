@@ -1,0 +1,32 @@
+{
+  "tag": "v3-9b-base",
+  "split": "eval",
+  "n_samples": 50,
+  "model": "Qwen/Qwen3.5-9B",
+  "positive_metrics": {
+    "teacher": {
+      "recall@1": 0.26,
+      "recall@5": 0.62,
+      "recall@10": 1.0,
+      "mrr@10": 0.42631746031746026,
+      "n_evaluated": 50
+    },
+    "student": {
+      "recall@1": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "mrr@10": 0.0,
+      "n_evaluated": 50
+    }
+  },
+  "parsing": {
+    "total": 50,
+    "valid": 0,
+    "valid_rate": 0.0
+  },
+  "teacher_agreement": {
+    "top1_agreement": 0.0,
+    "kendall_tau_mean": 0.0,
+    "kendall_tau_valid_n": 0
+  }
+}

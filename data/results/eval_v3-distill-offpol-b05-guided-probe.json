@@ -1,0 +1,35 @@
+{
+  "tag": "v3-distill-offpol-b05-guided-probe",
+  "model_name": "v3-distill-offpol-b05",
+  "url": "http://localhost:8400/v1",
+  "n_samples": 20,
+  "split": "eval",
+  "guided_decoding": true,
+  "parsing": {
+    "total": 20,
+    "valid": 0,
+    "valid_rate": 0
+  },
+  "positive_metrics": {
+    "teacher": {
+      "recall@1": 0.2,
+      "recall@5": 0.55,
+      "recall@10": 1,
+      "mrr@10": 0.37275793650793654,
+      "n_evaluated": 20
+    },
+    "student": {
+      "recall@1": 0,
+      "recall@5": 0,
+      "recall@10": 0,
+      "mrr@10": 0,
+      "n_evaluated": 20
+    }
+  },
+  "teacher_agreement": {
+    "top1_agreement": 0,
+    "kendall_tau_mean": 0,
+    "kendall_tau_valid_n": 0
+  },
+  "generation_time_s": 1215.5
+}

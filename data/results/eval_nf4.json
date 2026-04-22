@@ -1,0 +1,32 @@
+{
+  "tag": "nf4",
+  "split": "eval",
+  "n_samples": 66,
+  "model": "ckpt/student-nf4",
+  "positive_metrics": {
+    "teacher": {
+      "recall@1": 0.2727272727272727,
+      "recall@5": 0.696969696969697,
+      "recall@10": 1.0,
+      "mrr@10": 0.47232443482443476,
+      "n_evaluated": 66
+    },
+    "student": {
+      "recall@1": 0.2878787878787879,
+      "recall@5": 0.6363636363636364,
+      "recall@10": 0.9545454545454546,
+      "mrr@10": 0.4472943722943723,
+      "n_evaluated": 66
+    }
+  },
+  "parsing": {
+    "total": 66,
+    "valid": 63,
+    "valid_rate": 0.9545454545454546
+  },
+  "teacher_agreement": {
+    "top1_agreement": 0.4090909090909091,
+    "kendall_tau_mean": 0.6049382716049384,
+    "kendall_tau_valid_n": 63
+  }
+}

@@ -1,0 +1,409 @@
+{
+  "n_verdicts_total": 400,
+  "per_model": {
+    "teacher": {
+      "n_total": 50,
+      "n_scored": 50,
+      "n_errors": 0,
+      "groundedness": {
+        "mean": 8.54,
+        "ci95_low": 8.38,
+        "ci95_high": 8.7,
+        "n": 50
+      },
+      "personalization": {
+        "mean": 9.32,
+        "ci95_low": 9.2,
+        "ci95_high": 9.44,
+        "n": 50
+      },
+      "ranking_coherence": {
+        "mean": 9.96,
+        "ci95_low": 9.9,
+        "ci95_high": 10.0,
+        "n": 50
+      },
+      "retrieval": null,
+      "length": null
+    },
+    "teacher-p1-ranking-shuffled": {
+      "n_total": 50,
+      "n_scored": 50,
+      "n_errors": 0,
+      "groundedness": {
+        "mean": 8.48,
+        "ci95_low": 8.32,
+        "ci95_high": 8.64,
+        "n": 50
+      },
+      "personalization": {
+        "mean": 9.14,
+        "ci95_low": 9.04,
+        "ci95_high": 9.26,
+        "n": 50
+      },
+      "ranking_coherence": {
+        "mean": 2.72,
+        "ci95_low": 2.14,
+        "ci95_high": 3.36,
+        "n": 50
+      },
+      "retrieval": null,
+      "length": null
+    },
+    "teacher-p2-rationale-swapped": {
+      "n_total": 50,
+      "n_scored": 50,
+      "n_errors": 0,
+      "groundedness": {
+        "mean": 8.84,
+        "ci95_low": 8.46,
+        "ci95_high": 9.14,
+        "n": 50
+      },
+      "personalization": {
+        "mean": 9.14,
+        "ci95_low": 9.04,
+        "ci95_high": 9.26,
+        "n": 50
+      },
+      "ranking_coherence": {
+        "mean": 8.12,
+        "ci95_low": 7.24,
+        "ci95_high": 8.9,
+        "n": 50
+      },
+      "retrieval": null,
+      "length": null
+    },
+    "teacher-p3-persona-replaced": {
+      "n_total": 50,
+      "n_scored": 50,
+      "n_errors": 0,
+      "groundedness": {
+        "mean": 8.52,
+        "ci95_low": 8.36,
+        "ci95_high": 8.68,
+        "n": 50
+      },
+      "personalization": {
+        "mean": 7.62,
+        "ci95_low": 7.2,
+        "ci95_high": 8.0,
+        "n": 50
+      },
+      "ranking_coherence": {
+        "mean": 9.96,
+        "ci95_low": 9.9,
+        "ci95_high": 10.0,
+        "n": 50
+      },
+      "retrieval": null,
+      "length": null
+    },
+    "qwen35-teacher-guided-varB-example-v2": {
+      "n_total": 50,
+      "n_scored": 50,
+      "n_errors": 0,
+      "groundedness": {
+        "mean": 8.74,
+        "ci95_low": 8.56,
+        "ci95_high": 8.94,
+        "n": 50
+      },
+      "personalization": {
+        "mean": 9.6,
+        "ci95_low": 9.46,
+        "ci95_high": 9.74,
+        "n": 50
+      },
+      "ranking_coherence": {
+        "mean": 10.0,
+        "ci95_low": 10.0,
+        "ci95_high": 10.0,
+        "n": 50
+      },
+      "retrieval": {
+        "n_paired": 50,
+        "recall_at_1": 0.26,
+        "recall_at_5": 0.68,
+        "recall_at_10": 1.0,
+        "mrr_mean": 0.4644365079365078,
+        "groundedness_vs_hit1": {
+          "r": 0.22422767698210494,
+          "p": 0.11748125375629788,
+          "n": 50
+        },
+        "personalization_vs_hit1": {
+          "r": 0.018614519776248516,
+          "p": 0.8979064909492346,
+          "n": 50
+        },
+        "ranking_coherence_vs_hit1": {
+          "r": NaN,
+          "p": NaN,
+          "n": 50
+        },
+        "groundedness_vs_mrr": {
+          "rho": 0.24743038058436095,
+          "p": 0.08320318509915557,
+          "n": 50
+        },
+        "personalization_vs_mrr": {
+          "rho": -0.0014392437781967776,
+          "p": 0.9920854476319807,
+          "n": 50
+        },
+        "ranking_coherence_vs_mrr": {
+          "rho": NaN,
+          "p": NaN,
+          "n": 50
+        }
+      },
+      "length": {
+        "output_chars": {
+          "n": 50,
+          "mean": 2471.12,
+          "p50": 2463.0,
+          "p95": 2720.4,
+          "max": 2815.0
+        },
+        "output_tokens": {
+          "n": 50,
+          "mean": 588.72,
+          "p50": 587.5,
+          "p95": 637.75,
+          "max": 671.0
+        }
+      }
+    },
+    "v4-sft-B-opt-vllm-guided": {
+      "n_total": 50,
+      "n_scored": 50,
+      "n_errors": 0,
+      "groundedness": {
+        "mean": 8.64,
+        "ci95_low": 8.46,
+        "ci95_high": 8.84,
+        "n": 50
+      },
+      "personalization": {
+        "mean": 9.42,
+        "ci95_low": 9.28,
+        "ci95_high": 9.56,
+        "n": 50
+      },
+      "ranking_coherence": {
+        "mean": 9.9,
+        "ci95_low": 9.7,
+        "ci95_high": 10.0,
+        "n": 50
+      },
+      "retrieval": {
+        "n_paired": 50,
+        "recall_at_1": 0.24,
+        "recall_at_5": 0.72,
+        "recall_at_10": 1.0,
+        "mrr_mean": 0.43976984126984114,
+        "groundedness_vs_hit1": {
+          "r": 0.09012760973486357,
+          "p": 0.5336472282378704,
+          "n": 50
+        },
+        "personalization_vs_hit1": {
+          "r": -0.09867616806260626,
+          "p": 0.4953877939381883,
+          "n": 50
+        },
+        "ranking_coherence_vs_hit1": {
+          "r": -0.2542161488578884,
+          "p": 0.07482937360328692,
+          "n": 50
+        },
+        "groundedness_vs_mrr": {
+          "rho": 0.07299381271417282,
+          "p": 0.6144284116266578,
+          "n": 50
+        },
+        "personalization_vs_mrr": {
+          "rho": -0.15919455728457105,
+          "p": 0.2694785266307592,
+          "n": 50
+        },
+        "ranking_coherence_vs_mrr": {
+          "rho": -0.19041642000212344,
+          "p": 0.18532104378456019,
+          "n": 50
+        }
+      },
+      "length": {
+        "output_chars": {
+          "n": 50,
+          "mean": 2711.38,
+          "p50": 2692.0,
+          "p95": 2976.45,
+          "max": 3082.0
+        },
+        "output_tokens": {
+          "n": 50,
+          "mean": 685.36,
+          "p50": 686.5,
+          "p95": 738.55,
+          "max": 763.0
+        }
+      }
+    },
+    "v4-gkd-guided-B-vllm-guided": {
+      "n_total": 50,
+      "n_scored": 50,
+      "n_errors": 0,
+      "groundedness": {
+        "mean": 8.28,
+        "ci95_low": 8.08,
+        "ci95_high": 8.46,
+        "n": 50
+      },
+      "personalization": {
+        "mean": 9.28,
+        "ci95_low": 9.16,
+        "ci95_high": 9.4,
+        "n": 50
+      },
+      "ranking_coherence": {
+        "mean": 9.98,
+        "ci95_low": 9.94,
+        "ci95_high": 10.0,
+        "n": 50
+      },
+      "retrieval": {
+        "n_paired": 50,
+        "recall_at_1": 0.3,
+        "recall_at_5": 0.7,
+        "recall_at_10": 1.0,
+        "mrr_mean": 0.4623571428571428,
+        "groundedness_vs_hit1": {
+          "r": 0.22963345151931908,
+          "p": 0.10866918910311185,
+          "n": 50
+        },
+        "personalization_vs_hit1": {
+          "r": 0.17496355305594133,
+          "p": 0.2242562629889789,
+          "n": 50
+        },
+        "ranking_coherence_vs_hit1": {
+          "r": 0.09352195295828247,
+          "p": 0.5182845028395673,
+          "n": 50
+        },
+        "groundedness_vs_mrr": {
+          "rho": 0.19887253276807937,
+          "p": 0.16619080651845725,
+          "n": 50
+        },
+        "personalization_vs_mrr": {
+          "rho": 0.02668125616266058,
+          "p": 0.8540716973232677,
+          "n": 50
+        },
+        "ranking_coherence_vs_mrr": {
+          "rho": 0.025167761145233624,
+          "p": 0.86226695331971,
+          "n": 50
+        }
+      },
+      "length": {
+        "output_chars": {
+          "n": 50,
+          "mean": 2807.04,
+          "p50": 2806.5,
+          "p95": 2971.55,
+          "max": 3472.0
+        },
+        "output_tokens": {
+          "n": 50,
+          "mean": 703.56,
+          "p50": 705.0,
+          "p95": 742.65,
+          "max": 851.0
+        }
+      }
+    },
+    "base-0.8B-varB-vllm-guided": {
+      "n_total": 50,
+      "n_scored": 50,
+      "n_errors": 0,
+      "groundedness": {
+        "mean": 3.7,
+        "ci95_low": 3.0595000000000003,
+        "ci95_high": 4.4,
+        "n": 50
+      },
+      "personalization": {
+        "mean": 5.36,
+        "ci95_low": 4.94,
+        "ci95_high": 5.8,
+        "n": 50
+      },
+      "ranking_coherence": {
+        "mean": 6.68,
+        "ci95_low": 5.98,
+        "ci95_high": 7.4,
+        "n": 50
+      },
+      "retrieval": {
+        "n_paired": 50,
+        "recall_at_1": 0.08,
+        "recall_at_5": 0.48,
+        "recall_at_10": 1.0,
+        "mrr_mean": 0.28273015873015866,
+        "groundedness_vs_hit1": {
+          "r": 0.15689433637682404,
+          "p": 0.2765482118543329,
+          "n": 50
+        },
+        "personalization_vs_hit1": {
+          "r": 0.25869880163965825,
+          "p": 0.06967347353895656,
+          "n": 50
+        },
+        "ranking_coherence_vs_hit1": {
+          "r": 0.20615055139857028,
+          "p": 0.15091279762745805,
+          "n": 50
+        },
+        "groundedness_vs_mrr": {
+          "rho": 0.003256346631642677,
+          "p": 0.9820941799134368,
+          "n": 50
+        },
+        "personalization_vs_mrr": {
+          "rho": -0.024271827912846804,
+          "p": 0.86712507290459,
+          "n": 50
+        },
+        "ranking_coherence_vs_mrr": {
+          "rho": 0.04549118579978779,
+          "p": 0.753750630905298,
+          "n": 50
+        }
+      },
+      "length": {
+        "output_chars": {
+          "n": 50,
+          "mean": 2050.66,
+          "p50": 2055.0,
+          "p95": 2407.5,
+          "max": 2438.0
+        },
+        "output_tokens": {
+          "n": 50,
+          "mean": 514.48,
+          "p50": 507.5,
+          "p95": 581.0,
+          "max": 599.0
+        }
+      }
+    }
+  }
+}

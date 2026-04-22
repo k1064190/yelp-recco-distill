@@ -1,0 +1,32 @@
+{
+  "tag": "merged-smoke",
+  "split": "eval",
+  "n_samples": 2,
+  "model": "/workspace/projects/LLM_distillation/ckpt/student-merged",
+  "positive_metrics": {
+    "teacher": {
+      "recall@1": 0.5,
+      "recall@5": 0.5,
+      "recall@10": 1.0,
+      "mrr@10": 0.55,
+      "n_evaluated": 2
+    },
+    "student": {
+      "recall@1": 0.0,
+      "recall@5": 0.5,
+      "recall@10": 1.0,
+      "mrr@10": 0.3,
+      "n_evaluated": 2
+    }
+  },
+  "parsing": {
+    "total": 2,
+    "valid": 2,
+    "valid_rate": 1.0
+  },
+  "teacher_agreement": {
+    "top1_agreement": 0.5,
+    "kendall_tau_mean": 0.8,
+    "kendall_tau_valid_n": 2
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "tag": "w4a16",
+  "split": "eval",
+  "n_samples": 37,
+  "model": "ckpt/student-w4a16",
+  "positive_metrics": {
+    "teacher": {
+      "recall@1": 0.2702702702702703,
+      "recall@5": 0.7027027027027027,
+      "recall@10": 1.0,
+      "mrr@10": 0.4777134277134277,
+      "n_evaluated": 37
+    },
+    "student": {
+      "recall@1": 0.2972972972972973,
+      "recall@5": 0.7297297297297297,
+      "recall@10": 0.972972972972973,
+      "mrr@10": 0.4843736593736594,
+      "n_evaluated": 37
+    }
+  },
+  "parsing": {
+    "total": 37,
+    "valid": 36,
+    "valid_rate": 0.972972972972973
+  },
+  "teacher_agreement": {
+    "top1_agreement": 0.4864864864864865,
+    "kendall_tau_mean": 0.6456790123456791,
+    "kendall_tau_valid_n": 36
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "config": {
+    "n_eval_samples": 50,
+    "models": [
+      "teacher",
+      "teacher-p1-ranking-shuffled",
+      "teacher-p2-rationale-swapped",
+      "teacher-p3-persona-replaced"
+    ],
+    "judge_model": "gemini-3-flash-preview",
+    "inference_cache": [
+      "data/inference_samples/teacher.json",
+      "data/inference_samples/teacher-p1-ranking-shuffled.json",
+      "data/inference_samples/teacher-p2-rationale-swapped.json",
+      "data/inference_samples/teacher-p3-persona-replaced.json"
+    ]
+  },
+  "per_model": {
+    "teacher": {
+      "n_total": 50,
+      "n_scored": 50,
+      "n_errors": 0,
+      "groundedness": {
+        "mean": 8.58,
+        "ci95_low": 8.44,
+        "ci95_high": 8.72,
+        "n": 50
+      },
+      "personalization": {
+        "mean": 9.28,
+        "ci95_low": 9.16,
+        "ci95_high": 9.4,
+        "n": 50
+      }
+    },
+    "teacher-p1-ranking-shuffled": {
+      "n_total": 50,
+      "n_scored": 50,
+      "n_errors": 0,
+      "groundedness": {
+        "mean": 8.54,
+        "ci95_low": 8.38,
+        "ci95_high": 8.7,
+        "n": 50
+      },
+      "personalization": {
+        "mean": 9.08,
+        "ci95_low": 9.0,
+        "ci95_high": 9.18,
+        "n": 50
+      }
+    },
+    "teacher-p2-rationale-swapped": {
+      "n_total": 50,
+      "n_scored": 50,
+      "n_errors": 0,
+      "groundedness": {
+        "mean": 9.02,
+        "ci95_low": 8.7,
+        "ci95_high": 9.3,
+        "n": 50
+      },
+      "personalization": {
+        "mean": 9.16,
+        "ci95_low": 9.04,
+        "ci95_high": 9.28,
+        "n": 50
+      }
+    },
+    "teacher-p3-persona-replaced": {
+      "n_total": 50,
+      "n_scored": 50,
+      "n_errors": 0,
+      "groundedness": {
+        "mean": 8.54,
+        "ci95_low": 8.38,
+        "ci95_high": 8.7,
+        "n": 50
+      },
+      "personalization": {
+        "mean": 7.2,
+        "ci95_low": 6.72,
+        "ci95_high": 7.64,
+        "n": 50
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "tag": "gguf-q4km",
+  "split": "eval",
+  "n_samples": 66,
+  "model": "ckpt/student-gguf-q4km/student-q4-k-m.gguf",
+  "positive_metrics": {
+    "teacher": {
+      "recall@1": 0.2727272727272727,
+      "recall@5": 0.696969696969697,
+      "recall@10": 1.0,
+      "mrr@10": 0.47232443482443476,
+      "n_evaluated": 66
+    },
+    "student": {
+      "recall@1": 0.24242424242424243,
+      "recall@5": 0.6666666666666666,
+      "recall@10": 0.9393939393939394,
+      "mrr@10": 0.41880711880711885,
+      "n_evaluated": 66
+    }
+  },
+  "parsing": {
+    "total": 66,
+    "valid": 62,
+    "valid_rate": 0.9393939393939394
+  },
+  "teacher_agreement": {
+    "top1_agreement": 0.42424242424242425,
+    "kendall_tau_mean": 0.616487455197133,
+    "kendall_tau_valid_n": 62
+  }
+}

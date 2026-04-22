@@ -1,0 +1,15 @@
+{
+  "tag": "teacher-qwen35",
+  "split": "eval",
+  "n_samples": 283,
+  "model": "/workspace/projects/LLM_distillation/ckpt/student-merged",
+  "positive_metrics": {
+    "teacher": {
+      "recall@1": 0.26501766784452296,
+      "recall@5": 0.7173144876325088,
+      "recall@10": 1.0,
+      "mrr@10": 0.4576546637500701,
+      "n_evaluated": 283
+    }
+  }
+}
