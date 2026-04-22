@@ -343,7 +343,7 @@ llama.cpp CPU-only, Xeon 6505P (Granite Rapids, AVX-512 + AMX-int8), 16-thread p
 | NF4 | 0.206 / 0.244 | 0.458 / 0.489 | 10.4 / 9.4 % |
 | FP8 dynamic | 0.261 / 0.268 | 0.519 / 0.518 | 14.3 / 15.7 % |
 
-9B 는 model 이 커서 양자화에 더 관대 — 대부분의 PTQ 가 bf16 대비 ±1 pp 수준. NF4 만 -6 pp 로 유일한 큰 회귀.
+9B quality 는 **decode mode 에 민감**하다. **guided** 에서는 대부분 bf16 ±1 pp 안에 선방하지만, **unguided** 에서는 W4A16 −2.8 pp / W8A16 −4.6 pp / FP8 dynamic −3.9 pp 로 drop 이 꽤 크게 나온다. NF4 는 guided / unguided 모두 −6 pp 로 가장 큰 회귀. 0.8B 에서는 guided / unguided 모두 ±1 pp 안에 머무른 것과 대조적 — N=287 sample 에서 noise 가능성을 완전히 배제하기는 어렵지만, "9B 가 양자화에 더 관대" 라고 일반화하기에는 근거가 부족하다.
 
 #### Latency batch=1 (50 sample, CUDA graph ON) — **0.8B 와 방향 반대**
 
