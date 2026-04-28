@@ -1,7 +1,5 @@
 # LLM Distillation & Quantization — 한계 탐색 리포트
 
-> 작성: 2026-04-22 / 기간: 약 10일
-
 # 0. 프로젝트 동기
 LLM 분야에서 Distillation과 Quantization은 로컬 실행, 추론 비용 절감, 엣지 배포를 위해 거의 기본 옵션처럼 이야기된다. 그러나 개인적인 경험에서 이 기법들은 모든 상황에서 동작하는 마법은 아니었다.
 그래서 이 프로젝트는 "Qwen3.5 35B-A3B → 0.8B / 9B"라는 구체적인 teacher-student 페어를
