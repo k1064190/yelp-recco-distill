@@ -46,12 +46,17 @@ regressions on secondary axes vs v3 iter1.
 | P2 | **+0.30 null ⚠️** | −0.18 weak ⚠️ | −1.84 pass |
 | P3 | −0.02 consistent | **−1.70 pass** ✓ (disc 90 %) | +0.00 consistent |
 
-The original v3-iter1 P2×G null was filed as a Gemini-Flash limitation. The
-2026-04-29 forensic deep-dive (root README §5.5) showed it was actually a
-prompt × thinking-budget defect: a Gemini-Pro probe scored G=1 on cases
-Flash MINIMAL gave G=10 *under the unchanged v3 prompt*, proving the
-prompt was executable with sufficient deliberation. v3.1 ships the three
-prompt edits + the MEDIUM thinking budget that close the gap.
+The original v3-iter1 P2×G null was filed as a "Gemini Flash
+limitation". The 2026-04-29 forensic deep-dive (root README §5.5) showed
+this label was directionally correct (the failure is capacity-bound,
+H5 under-thinking) but defeatist: a Gemini-Pro probe scored G=1 on
+cases Flash MINIMAL gave G=10 *under the unchanged v3 prompt*, so the
+prompt was executable with sufficient deliberation, and Flash with a
+larger ThinkingLevel reaches the same verdict at a fraction of the
+Pro cost. **v3.1's load-bearing change is `ThinkingLevel.MINIMAL →
+MEDIUM`**; the three minor prompt edits ride along as scaffolding that
+helps borderline budgets stay on track but do not carry the fix on
+their own (v3.1 + LOW only moves Δ from +0.30 to −0.08).
 
 ## Rubric history (summary)
 
