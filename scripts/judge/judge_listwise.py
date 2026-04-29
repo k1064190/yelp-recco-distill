@@ -118,7 +118,7 @@ SCORE_MIN = 1
 SCORE_MAX = 10
 
 
-RUBRIC_VERSION = "v3"
+RUBRIC_VERSION = "v3.1"
 """Bump whenever ``JUDGE_SYSTEM_LISTWISE`` or ``JUDGE_USER_TEMPLATE``
 changes in a way that alters the scoring distribution. Each verdict
 record embeds this tag so the analysis scripts can separate runs by
@@ -276,7 +276,19 @@ VERIFICATION STEP 1 -- Groundedness (required, do NOT skip)
 
 For EACH rationale #k (k = 1 .. N), locate candidate #k in the
 [CANDIDATE PLACES] block (same 1-based index -- rationale #3 must be
-checked against candidate #3, not some other one). Silently answer:
+checked against candidate #3, not some other one).
+
+YOU MUST GENERATE A VERIFICATION SCRATCHPAD before scoring. For EACH
+candidate k = 1..N, output exactly one line in this form (this writing
+is mandatory; do NOT score without it):
+    "Rationale #k: GT=[Candidate Name] vs Cited=[Name/Cuisine/Category mentioned in rationale text] -> Leak=[Yes/No]"
+A leak is "Yes" if the rationale's text names or describes a place
+that is NOT candidate #k (e.g., the rationale's slot is candidate #1
+"Heung Fa Chun Sweet House" but the rationale text is about "London
+Grill"). Use the exact entity name from the rationale text in the
+"Cited" slot; if the rationale only describes a category with no
+distinguishing entity, write the category. After producing all N
+scratchpad lines, only then answer:
 
   (a) Does the rationale cite at least one specific field (name,
       categories, avg_stars / rating tier, named attribute, or hours)
@@ -287,16 +299,27 @@ checked against candidate #3, not some other one). Silently answer:
   (c) Does the rationale mention a name / cuisine / category belonging
       to a DIFFERENT candidate? (Cross-candidate leak: rationale #1 talks
       about "London Grill" but candidate #1 is "Heung Fa Chun Sweet
-      House".)
+      House".) The Leak=Yes lines from your scratchpad are the answer.
   (d) How many DISTINCT fields are cited in this rationale? Count: name
       (1), categories (1 per distinct category label), rating (1), each
       named attribute separately (e.g., "has patio" + "dog-friendly" =
       2), hours (1). "This Japanese restaurant" = 1 field. "4.5-star
       Japanese restaurant with a patio" = 3 fields.
 
+CRITICAL CAP (read BEFORE computing counts): if ANY rationale fails (c)
+-- a single cross-candidate leak from your scratchpad with Leak=Yes --
+Groundedness is IMMEDIATELY CAPPED at 2 regardless of any other counts.
+Factual fidelity to THIS candidate is the entire point of this axis;
+any leak makes the rationale's apparent attributes irrelevant. To
+reach 9-10 you need BOTH zero leaks AND demonstrable depth.
+
 Compute:
   G_exact    = rationales that pass (a) AND (b) AND do not fail (c).
-  G_wrong    = rationales that fail (c) -- cross-candidate leak.
+  G_wrong    = rationales that fail (c) -- cross-candidate leak. YOU
+               MUST list the failing rationale indices explicitly,
+               e.g. "[2, 5, 9]" or "[None]" if none. A bare integer
+               with no list is INVALID; the evidence string must
+               contain the bracketed list verbatim.
   G_hallu    = rationales that cite a field value not matching candidate #k.
   G_vague    = rationales that cite no specific field at all (pure filler).
   avg_fields = mean of (d) across rationales.
@@ -326,9 +349,10 @@ GROUNDEDNESS ladder (1-10, pick the HIGHEST tier whose preconditions hold):
       "Half or more rationales mis-attributed or hallucinated."
   1 = Most rationales talk about entirely wrong candidates.
 
-CAP: a single clear case of (c) caps Groundedness at 2, because factual
-fidelity to THIS candidate is the point of the axis. To reach 9-10 you
-need BOTH zero errors AND demonstrable depth.
+(Reminder: the leak cap is now stated above the Compute block; the
+ladder above is the ceiling assuming zero leaks. A leak still drops
+the score to 2 regardless of the ladder tier the counts would otherwise
+unlock.)
 
 =======================================================================
 VERIFICATION STEP 2 -- Personalization (required, do NOT skip)
@@ -814,6 +838,7 @@ class ListwiseJudgeClient:
         api_call_interval: float,
         max_output_tokens: int = 1024,
         max_retries: int = 3,
+        thinking_level: str = "MINIMAL",
     ):
         import os
 
@@ -838,13 +863,24 @@ class ListwiseJudgeClient:
         self._max_retries = max_retries
         self._last_call_ts: float = 0.0
 
+        # Thinking level: M0 ablation (P-26 deep analysis 2026-04-28). MINIMAL was
+        # the original default; LOW/MEDIUM/HIGH cross-check rationale text against
+        # candidate names, fixing P2 anchor leakage on candidate_index.
+        level_attr = (thinking_level or "MINIMAL").upper()
+        if not hasattr(genai_types.ThinkingLevel, level_attr):
+            raise ValueError(
+                f"unknown thinking_level={thinking_level!r}; valid: "
+                f"OFF / MINIMAL / LOW / MEDIUM / HIGH"
+            )
+        thinking_level_value = getattr(genai_types.ThinkingLevel, level_attr)
+
         self._gen_config = genai_types.GenerateContentConfig(
             temperature=0.0,
             response_mime_type="application/json",
             response_schema=ListwiseVerdict,
             system_instruction=JUDGE_SYSTEM_LISTWISE,
             thinking_config=genai_types.ThinkingConfig(
-                thinking_level=genai_types.ThinkingLevel.MINIMAL,
+                thinking_level=thinking_level_value,
             ),
             max_output_tokens=max_output_tokens,
         )
@@ -1151,6 +1187,17 @@ def parse_args() -> argparse.Namespace:
         ),
     )
     p.add_argument(
+        "--thinking-level",
+        type=str,
+        default="MINIMAL",
+        help=(
+            "Gemini ThinkingLevel: OFF / MINIMAL / LOW / MEDIUM / HIGH. "
+            "Default MINIMAL preserves the v3 iter1 production setting. "
+            "Raise to LOW or higher for the M0 ablation that fixes P2 "
+            "rationale-swap anchor leakage (P-26)."
+        ),
+    )
+    p.add_argument(
         "--dry-run",
         action="store_true",
         help="resolve eval split + cache lookups + prompt rendering, then exit "
@@ -1255,6 +1302,7 @@ def main() -> int:
         model_name=args.judge_model,
         api_call_interval=args.api_call_interval,
         max_output_tokens=args.max_output_tokens,
+        thinking_level=args.thinking_level,
     )
 
     # 6. Per-pair judging loop with append-on-each-call resumability.
